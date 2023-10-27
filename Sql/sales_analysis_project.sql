@@ -48,7 +48,7 @@ FROM pizza_sales
 WHERE YEAR(order_date) = 2015
 GROUP BY pizza_size;
 
---8.Daily Order Trends: Analyze daily order volume for the last 30 days
+--8. Daily Order Trends: Analyze daily order volume for the last 30 days
 
 SELECT CAST(order_date AS DATE) AS order_day, COUNT(order_id) AS order_count
 FROM pizza_sales
@@ -56,7 +56,7 @@ WHERE order_date >= '2015-12-01' AND order_date < '2016-01-01'
 GROUP BY CAST(order_date AS DATE)
 ORDER BY order_day;
 
---9.Revenue Growth by Month
+--9. Revenue Growth by Month
 
 SELECT YEAR(order_date) AS year, MONTH(order_date) AS month,
     SUM(total_price) AS monthly_revenue,
@@ -67,7 +67,7 @@ GROUP BY YEAR(order_date), MONTH(order_date)
 ORDER BY YEAR(order_date), MONTH(order_date);
 
 
---10.List the top 10 pizza names with the highest total sales (quantity * unit price)
+--10. List the top 10 pizza names with the highest total sales (quantity * unit price)
 
 SELECT pizza_name, total_sales
 FROM (
