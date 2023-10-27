@@ -1,6 +1,6 @@
 -- selecting the database
 
-use piza_sales_project;
+USE piza_sales_project;
 
 -- 1. What are top 3 values of total invoice?
 
